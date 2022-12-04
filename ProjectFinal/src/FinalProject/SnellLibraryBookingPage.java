@@ -168,7 +168,11 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         T0S4 = new javax.swing.JToggleButton();
         T0S6 = new javax.swing.JToggleButton();
         T0S7 = new javax.swing.JToggleButton();
+
+        seatNumber = new javax.swing.JTextField();
+
         jLabel1 = new javax.swing.JLabel();
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1920, 1080));
@@ -749,6 +753,13 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T2S1StateChanged(evt);
             }
         });
+
+        T2S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T2S1ActionPerformed(evt);
+            }
+        });
+
         jPanel1.add(T2S1);
         T2S1.setBounds(1360, 490, 35, 35);
 
@@ -1951,6 +1962,12 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 1920, 1080);
 
+
+        seatNumber.setText("jTextField1");
+        jPanel1.add(seatNumber);
+        seatNumber.setBounds(410, 760, 71, 22);
+
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -2573,6 +2590,15 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
             
     }//GEN-LAST:event_T18S4ActionPerformed
 
+
+    private void T2S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T2S1ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T2S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T2S1ActionPerformed
+
+
     /**
      * @param args the command line arguments
      */
@@ -2745,7 +2771,13 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
     private javax.swing.JToggleButton T9S2;
     private javax.swing.JToggleButton U;
     private javax.swing.ButtonGroup buttonGroup1;
+
+    private static final javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
+    private javax.swing.JPanel jPanel1;
+    public static javax.swing.JTextField seatNumber;
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+
     // End of variables declaration//GEN-END:variables
 }

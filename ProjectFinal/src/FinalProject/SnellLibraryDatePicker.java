@@ -39,6 +39,9 @@ public class SnellLibraryDatePicker extends javax.swing.JFrame {
         
     }
 
+    
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -156,7 +159,11 @@ public class SnellLibraryDatePicker extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BookDate;
+
+    public static com.toedter.calendar.JDateChooser BookingDate;
+
     private com.toedter.calendar.JDateChooser BookingDate;
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
