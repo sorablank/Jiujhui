@@ -191,6 +191,10 @@ public class StudentLoginPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logIn;
     private javax.swing.JTextField passwordField;
+
     public static javax.swing.JTextField usernameField;
+
+    private javax.swing.JTextField usernameField;
+
     // End of variables declaration//GEN-END:variables
 }
