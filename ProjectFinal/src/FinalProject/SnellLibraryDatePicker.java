@@ -32,6 +32,7 @@ public class SnellLibraryDatePicker extends javax.swing.JFrame {
         
         cal.add(Calendar.DATE, 6);
         
+        
         BookingDate.setMinSelectableDate(date);
         BookingDate.setMaxSelectableDate(cal.getTime());
        
@@ -54,6 +55,8 @@ public class SnellLibraryDatePicker extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         BookingDate = new com.toedter.calendar.JDateChooser();
         BookDate = new javax.swing.JButton();
+        navigate = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,6 +83,30 @@ public class SnellLibraryDatePicker extends javax.swing.JFrame {
         });
         jPanel1.add(BookDate);
         BookDate.setBounds(800, 790, 360, 90);
+
+        navigate.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        navigate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account", "Back To Home Page", "My Profile", "Order Page", "Logout" }));
+        navigate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                navigateMouseClicked(evt);
+            }
+        });
+        navigate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                navigateActionPerformed(evt);
+            }
+        });
+        jPanel1.add(navigate);
+        navigate.setBounds(1732, 80, 160, 40);
+
+        jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2);
+        jButton2.setBounds(130, 80, 80, 23);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Frame 2 (3).png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -114,12 +141,42 @@ public class SnellLibraryDatePicker extends javax.swing.JFrame {
         }
         
         else{
-            new SnellLibraryBookingPage().setVisible(true);
+            new SnellLibraryFloorPicker().setVisible(true);
                 dispose();
                 }
         
 
     }//GEN-LAST:event_BookDateActionPerformed
+
+    private void navigateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navigateMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_navigateMouseClicked
+
+    private void navigateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_navigateActionPerformed
+        // TODO add your handling code here:
+        if(navigate.getSelectedItem().toString().equals("Back To Home Page")){
+            new StudentHomePage().setVisible(true);
+            dispose();
+        }
+        if(navigate.getSelectedItem().toString().equals("My Profile")){
+            new StudentProfilePage().setVisible(true);
+            dispose();
+        }
+        if(navigate.getSelectedItem().toString().equals("Order Page")){
+            new StudentOrdersPage().setVisible(true);
+            dispose();
+        }
+        if(navigate.getSelectedItem().toString().equals("Logout")){
+            new NEUHomePage().setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_navigateActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        new StudentHomePage().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,12 +216,10 @@ public class SnellLibraryDatePicker extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BookDate;
-
     public static com.toedter.calendar.JDateChooser BookingDate;
-
-    private com.toedter.calendar.JDateChooser BookingDate;
-
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> navigate;
     // End of variables declaration//GEN-END:variables
 }

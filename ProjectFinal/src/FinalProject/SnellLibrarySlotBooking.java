@@ -4,6 +4,25 @@
  */
 package FinalProject;
 
+import FinalProject.ConnectionClass;
+import FinalProject.ConnectionClass;
+import FinalProject.SnellLibraryBookingFloor2;
+import FinalProject.SnellLibraryBookingFloor2;
+import FinalProject.SnellLibraryBookingFloor3;
+import FinalProject.SnellLibraryBookingFloor3;
+import FinalProject.SnellLibraryBookingFloor4;
+import FinalProject.SnellLibraryBookingFloor4;
+import FinalProject.SnellLibraryBookingPage;
+import FinalProject.SnellLibraryBookingPage;
+import FinalProject.SnellLibraryDatePicker;
+import FinalProject.SnellLibraryDatePicker;
+import FinalProject.SnellLibraryFloorPicker;
+import FinalProject.SnellLibraryFloorPicker;
+import FinalProject.StudentHomePage;
+import FinalProject.StudentHomePage;
+import FinalProject.StudentLoginPage;
+import FinalProject.StudentOrdersPage;
+import FinalProject.StudentProfilePage;
 import static FinalProject.SnellLibraryDatePicker.BookingDate;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,8 +31,23 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.Year;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
@@ -26,6 +60,7 @@ public class SnellLibrarySlotBooking extends javax.swing.JFrame {
     Timer t;
     SimpleDateFormat st;
     SimpleDateFormat st1;
+    Connection con;
   
     /**
      * Creates new form SnellLibrarySlotBooking
@@ -52,9 +87,12 @@ public class SnellLibrarySlotBooking extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         bookButton = new javax.swing.JButton();
         timingField = new javax.swing.JTextField();
+        back = new javax.swing.JLabel();
+        navigate = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1920, 1080));
         setMinimumSize(new java.awt.Dimension(1920, 1080));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -147,7 +185,9 @@ public class SnellLibrarySlotBooking extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(1100, 570, 90, 20);
 
+        bookButton.setBackground(new java.awt.Color(133, 0, 0));
         bookButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        bookButton.setForeground(new java.awt.Color(255, 255, 255));
         bookButton.setText("BOOK");
         bookButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,6 +200,49 @@ public class SnellLibrarySlotBooking extends javax.swing.JFrame {
         timingField.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jPanel1.add(timingField);
         timingField.setBounds(1280, 570, 170, 25);
+
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back-black-square-interface-button-symbol 1.png"))); // NOI18N
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backMouseClicked(evt);
+            }
+        });
+        jPanel1.add(back);
+        back.setBounds(80, 80, 40, 40);
+
+        navigate.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        navigate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account", "Back To Home Page", "My Profile", "Order Page", "Logout" }));
+        navigate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                navigateMouseClicked(evt);
+            }
+        });
+        navigate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                navigateActionPerformed(evt);
+            }
+        });
+        jPanel1.add(navigate);
+        navigate.setBounds(1732, 80, 160, 40);
+
+        jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2);
+        jButton2.setBounds(100, 90, 80, 23);
+
+        jLabel3.setForeground(new java.awt.Color(133, 0, 0));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Frame 2 (3).png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jLabel3.setToolTipText("");
+        jLabel3.setMaximumSize(new java.awt.Dimension(1920, 1080));
+        jLabel3.setMinimumSize(new java.awt.Dimension(1920, 1080));
+        jLabel3.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(0, 0, 1920, 1080);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -190,19 +273,48 @@ public class SnellLibrarySlotBooking extends javax.swing.JFrame {
          
          Date dt = new Date();
          st = new SimpleDateFormat("HH");
+         st1 = new SimpleDateFormat("yyyy-MM-dd");
+         String ttd = st1.format(dt);
          String tt = st.format(dt); 
-         System.out.println(tt);
+         //System.out.println(tt);
          
          st1 = new SimpleDateFormat("yyyy-MM-dd");
          String tt1 = st1.format(SnellLibraryDatePicker.BookingDate.getDate()); 
          
+         String floor = SnellLibraryFloorPicker.selectFloor.getSelectedItem().toString();
+         
+        //to filter query output based on floor 
+        String seatName = "";
+        if(floor.equals("Floor 1")){
+        seatName =  SnellLibraryBookingPage.seatNumber.getText();   
+        }
+        
+        
+        if(floor.equals("Floor 2")){
+        seatName =  SnellLibraryBookingFloor2.seatNumber.getText();   
+        }
+        
+        if(floor.equals("Floor 3")){
+        seatName =  SnellLibraryBookingFloor3.seatNumber.getText();   
+        }
+        
+        if(floor.equals("Floor 4")){
+        seatName =  SnellLibraryBookingFloor4.seatNumber.getText();   
+        }
+        //--------------------------------------------------------------------- 
+         
          
          try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection StudentConnection = DriverManager.getConnection("jdbc:mysql://192.168.161.158:3306/finalproject","root", "");
-            Statement StudentStatement = (Statement) StudentConnection.createStatement();
-            String slotSql = ("Select slots, slot_time from slots_available where  slots > '"+tt+"' and slots NOT IN (select slot from slot_info where date = '"+tt1+"' and seat_name = '"+SnellLibraryBookingPage.seatNumber.getText()+"') " );
-            PreparedStatement slotPreparedStatement = StudentConnection.prepareStatement(slotSql);
+            con = ConnectionClass.getConnection();
+            Statement StudentStatement = (Statement) con.createStatement();
+            String slotSql = "";
+            if(ttd.equals(tt1)){
+              slotSql = ("Select slots, slot_time from slots_available where  slots > '"+tt+"' and slots NOT IN (select slot from slot_info where date = '"+tt1+"' and seat_name = '"+seatName+"') " );     
+            }
+            else{
+              slotSql = ("Select slots, slot_time from slots_available where slots NOT IN (select slot from slot_info where date = '"+tt1+"' and seat_name = '"+seatName+"') " );     
+            }    
+            PreparedStatement slotPreparedStatement = con.prepareStatement(slotSql);
             ResultSet patientResultSet = slotPreparedStatement.executeQuery();
             DefaultTableModel washingtonModel = (DefaultTableModel)slotTable.getModel();
             washingtonModel.setRowCount(0);
@@ -214,7 +326,6 @@ public class SnellLibrarySlotBooking extends javax.swing.JFrame {
     
     } catch(Exception e){
         JOptionPane.showMessageDialog(null, e);
-    
     }  
          
         
@@ -242,24 +353,237 @@ public class SnellLibrarySlotBooking extends javax.swing.JFrame {
           String numberFieldNew = numberField.getText();
           String timingFieldNew = timingField.getText();
           String username = StudentLoginPage.usernameField.getText();
-          String seatName = SnellLibraryBookingPage.seatNumber.getText();
+          String seatName = "";
           st1 = new SimpleDateFormat("yyyy-MM-dd");
          String tt1 = st1.format(SnellLibraryDatePicker.BookingDate.getDate()); 
-          
-          
-          
+         String statusUpdate = "Not checked-in";
+         String floor = SnellLibraryFloorPicker.selectFloor.getSelectedItem().toString();
+
+        int mail_send = 0;
+         
+        //For Calculating Week No
+        String date_start = "01-01-2022 23:59:59";
+        
+        String year = tt1.substring(0, 4);
+        String month = tt1.substring(5, 7);
+        String day = tt1.substring(8, 10);
+        String date_end = day+"-"+month+"-"+year+" 00:00:00"; 
+        
+        SimpleDateFormat sdf  = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        long difference_In_Days = 0;
+        
+        try {
+            Date d1 = sdf.parse(date_start);
+            Date d2 = sdf.parse(date_end);
+            
+            long difference_In_Time   = (long) Math.ceil(d2.getTime() - d1.getTime());
+            difference_In_Days = (long) Math.ceil(Math.ceil(difference_In_Time / (1000 * 60 * 60 * 24)) % 365);
+            System.out.println(difference_In_Days); 
+            
+           
+        }catch(Exception e){
+        JOptionPane.showMessageDialog(null, e);
+    
+        }  
+       
+        int week = (int) (Math.ceil(difference_In_Days/7));
+        //--------------------------------------------------------------------------------------------------------
+        
+        //For checking if booking limit crossed 
+        String count = "";
+        String count1 = "";          
+        try{
+            
+            con = ConnectionClass.getConnection();
+            Statement StudentStatement = (Statement) con.createStatement();
+            String slotSql = ("Select count(username) as cu from slot_info where username = '"+username+"' and week_no = " +week+ " and seat_name NOT IN('A','B','C','D','E','F','G','H','J','K','L','M','N','O','P','Q','R','S','T','U','V','DMC1','DMC2','DMC3','DMC4','DMC5','Circle1','Circle2','351','352','353','354','355','451','452','453','454') " );
+            String slotSql1 = ("Select count(username) as cu from slot_info where username = '"+username+"' and week_no = " +week+ " and seat_name IN('A','B','C','D','E','F','G','H','J','K','L','M','N','O','P','Q','R','S','T','U','V','DMC1','DMC2','DMC3','DMC4','DMC5','Circle1','Circle2','351','352','353','354','355','451','452','453','454') " );           
+            PreparedStatement slotPreparedStatement = con.prepareStatement(slotSql);
+             PreparedStatement slotPreparedStatement1 = con.prepareStatement(slotSql1);
+            ResultSet c = slotPreparedStatement.executeQuery();          
+            ResultSet c1 = slotPreparedStatement1.executeQuery();
+            while(c.next())
+            {
+             count = c.getString("cu");
+            }
+             while(c1.next())
+            {
+             count1 = c1.getString("cu");
+            }
+    
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+
+        }  
+        int count_slot = Integer.parseInt(count);
+        int count_slot1 = Integer.parseInt(count1);
+        //--------------------------------------------------------------------------------------------------------
+        
+        //for rooms  
+        //i) for floor 1
+        String room = "";
+        if(floor.equals("Floor 1")){
+        seatName =  SnellLibraryBookingPage.seatNumber.getText();   
+        if(seatName.equals("A") || seatName.equals("B") || seatName.equals("C") || seatName.equals("D") || seatName.equals("E") || seatName.equals("F")
+                || seatName.equals("G") || seatName.equals("H") || seatName.equals("J") || seatName.equals("K") || seatName.equals("L") || seatName.equals("M")
+                || seatName.equals('N') || seatName.equals('O') || seatName.equals('P') || seatName.equals('Q') || seatName.equals('R') || seatName.equals('S')
+                || seatName.equals('T') || seatName.equals('U') || seatName.equals('V'))  {
+                room = "1";
+          } 
+        else{ 
+                room = "2";
+        }}
+        //ii) for floor 2
+        if(floor.equals("Floor 2")){
+        seatName =  SnellLibraryBookingFloor2.seatNumber.getText();   
+        if(seatName.equals("DMC1") || seatName.equals("DMC2") || seatName.equals("DMC3") || seatName.equals("DMC4") || seatName.equals("DMC5") || seatName.equals("Circle1")
+                || seatName.equals("Circle2") )  {
+                room = "1";
+          } 
+        else{ 
+                room = "2";
+        }}
+        
+        //iii) for floor 3
+        if(floor.equals("Floor 3")){
+        seatName =  SnellLibraryBookingFloor3.seatNumber.getText();   
+        if(seatName.equals("351") || seatName.equals("352") || seatName.equals("353") || seatName.equals("354") || seatName.equals("355") )  {
+                room = "1";
+          } 
+        else{ 
+                room = "2";
+        }}
+        
+        //iii) for floor 4
+        if(floor.equals("Floor 4")){
+        seatName =  SnellLibraryBookingFloor4.seatNumber.getText();   
+        if(seatName.equals("451") || seatName.equals("452") || seatName.equals("453") || seatName.equals("454")  )  {
+                room = "1";
+          } 
+        else{ 
+                room = "2";
+        }}
+             
+        //-----------------------------------------------------------------------------------------------------------
+        
+        if(count_slot < 10 & room.equals("2")){               
+        //for inserting table if met booking criteria  
+
           try{  
            
-            Class.forName("com.mysql.jdbc.Driver");
-           
-            Connection StudentConnection = DriverManager.getConnection("jdbc:mysql://192.168.161.158:3306/finalproject","root", "");
-            Statement StudentStatement = (Statement) StudentConnection.createStatement();
+            con = ConnectionClass.getConnection();
+            Statement StudentStatement = (Statement) con.createStatement();
            
             
             
             
-            String HospitalAdminSql = "Insert into slot_info values (?,?,?,?,?,?,?)";
-            PreparedStatement HospitalAdminApp = StudentConnection.prepareStatement(HospitalAdminSql);
+
+            String HospitalAdminSql = "Insert into slot_info values (?,?,?,?,?,?,?,?,?,?)";
+
+            PreparedStatement HospitalAdminApp = con.prepareStatement(HospitalAdminSql);
+           
+            HospitalAdminApp.setString(1, username);
+            HospitalAdminApp.setString(2, seatName);          
+            HospitalAdminApp.setString(3, numberFieldNew);
+            HospitalAdminApp.setString(4, timingFieldNew);
+            HospitalAdminApp.setString(5, tt1);
+            HospitalAdminApp.setString(6, null);
+            HospitalAdminApp.setString(7, statusUpdate);
+            HospitalAdminApp.setInt(8, week);
+            HospitalAdminApp.setString(9, floor);
+            HospitalAdminApp.setString(10, null);
+           
+            HospitalAdminApp.executeUpdate();
+            
+            con.close();
+
+        
+           
+        }    catch(Exception e){
+        JOptionPane.showMessageDialog(null, e);
+   
+    }
+          
+     
+        try{
+            con = ConnectionClass.getConnection();
+            Statement StudentStatement = (Statement) con.createStatement();
+            
+            String update = ("UPDATE slot_info, codes SET slot_info.code = codes.code WHERE slot_info.seat_name = codes.seat_name;");
+             PreparedStatement slotPreparedStatement = con.prepareStatement(update);
+            slotPreparedStatement.execute();
+            
+            
+             String domain = "@northeastern.edu";
+             String mail = username + domain;
+             
+              String to = mail;
+            String from = "java.testfinalproject@gmail.com";
+            final String password = "fygsvdheohgpnvke";
+            
+            Properties properties = System.getProperties();
+            
+            properties.put("mail.smtp.host", "smtp.gmail.com");
+            properties.put("mail.smtp.port", "465");
+            properties.put("mail.smtp.auth", "true");
+            properties.put("mail.smtp.ssl.enable", "true");
+            properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
+            properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+
+            
+             Session session = Session.getInstance(properties,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(from, password);
+                    }
+                });
+             
+             try {
+            // Create a default MimeMessage object.
+            MimeMessage message = new MimeMessage(session);
+            // Set From: header field of the header.
+            message.setFrom(new InternetAddress(from));
+            // Set To: header field of the header.
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            // Set Subject: header field
+            message.setSubject("Library Booking Confirmation");
+            // Now set the actual message
+            message.setText("Your booking has been booked succesfully.\n Date: "+tt1+" \n Seat no: " +seatName+ "\n Time: "+timingFieldNew);
+            // Send message
+            Transport.send(message);
+            System.out.println("Sent message successfully....");
+        } catch (MessagingException mex) {
+            mex.printStackTrace();
+        } 
+         
+            
+             JOptionPane.showMessageDialog(null,"Slot booked succesfully");
+    
+             numberField.setText("");
+             timingField.setText("");
+             
+            
+    
+    } catch(Exception e){
+        JOptionPane.showMessageDialog(null, e);
+    
+    }}
+        
+        
+        
+        
+        if(count_slot1 < 4 & room.equals("1")){    
+        //for inserting table if met booking criteria  
+          try{  
+           
+            con = ConnectionClass.getConnection();
+            Statement StudentStatement = (Statement) con.createStatement();
+           
+            
+            
+            
+            String HospitalAdminSql = "Insert into slot_info values (?,?,?,?,?,?,?,?,?,?)";
+            PreparedStatement HospitalAdminApp = con.prepareStatement(HospitalAdminSql);
            
             HospitalAdminApp.setString(1, username);
             HospitalAdminApp.setString(2, seatName);          
@@ -268,15 +592,18 @@ public class SnellLibrarySlotBooking extends javax.swing.JFrame {
             HospitalAdminApp.setString(5, tt1);
             HospitalAdminApp.setString(6, null);
             HospitalAdminApp.setString(7, null);
+            HospitalAdminApp.setInt(8, week);
+            HospitalAdminApp.setString(9, floor);
+            HospitalAdminApp.setString(10, null);
            
             HospitalAdminApp.executeUpdate();
             
             
-            
-            
+             
+
            
            
-            StudentConnection.close();
+            con.close();
 
         
            
@@ -290,14 +617,54 @@ public class SnellLibrarySlotBooking extends javax.swing.JFrame {
       
         
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection StudentConnection = DriverManager.getConnection("jdbc:mysql://192.168.161.158:3306/finalproject","root", "");
-            Statement StudentStatement = (Statement) StudentConnection.createStatement();
+            con = ConnectionClass.getConnection();
+            Statement StudentStatement = (Statement) con.createStatement();
             
             String update = ("UPDATE slot_info, codes SET slot_info.code = codes.code WHERE slot_info.seat_name = codes.seat_name;");
-             PreparedStatement slotPreparedStatement = StudentConnection.prepareStatement(update);
+             PreparedStatement slotPreparedStatement = con.prepareStatement(update);
             slotPreparedStatement.execute();
+             String domain = "@northeastern.edu";
+             String mail = username + domain;
+             
+              String to = mail;
+            String from = "java.testfinalproject@gmail.com";
+            final String password = "fygsvdheohgpnvke";
             
+            Properties properties = System.getProperties();
+            
+            properties.put("mail.smtp.host", "smtp.gmail.com");
+            properties.put("mail.smtp.port", "465");
+            properties.put("mail.smtp.auth", "true");
+            properties.put("mail.smtp.ssl.enable", "true");
+            properties.put("mail.smtp.ssl.protocols", "TLSv1.2");
+            properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+
+            
+             Session session = Session.getInstance(properties,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(from, password);
+                    }
+                });
+             
+             try {
+            // Create a default MimeMessage object.
+            MimeMessage message = new MimeMessage(session);
+            // Set From: header field of the header.
+            message.setFrom(new InternetAddress(from));
+            // Set To: header field of the header.
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            // Set Subject: header field
+            message.setSubject("Library Booking Confirmation");
+            // Now set the actual message
+            message.setText("Your booking has been booked succesfully.\n Date: "+tt1+" \n Seat no: " +seatName+ "\n Time: "+timingFieldNew);
+            // Send message
+            Transport.send(message);
+            System.out.println("Sent message successfully....");
+        } catch (MessagingException mex) {
+            mex.printStackTrace();
+        } 
+         
              JOptionPane.showMessageDialog(null,"Slot booked succesfully");
             
             
@@ -305,15 +672,93 @@ public class SnellLibrarySlotBooking extends javax.swing.JFrame {
              numberField.setText("");
              timingField.setText("");
              
+
              
+
             
             
     
     } catch(Exception e){
         JOptionPane.showMessageDialog(null, e);
     
-    }
+
+    }}
+        
+        
+        
+         if(count_slot1 >= 4 & room.equals("1")) {          
+              JOptionPane.showMessageDialog(null, "You have reached max room booking for the week");  
+               new StudentHomePage().setVisible(true);                 
+            }
+         
+         if(count_slot >= 10 & room.equals("2")) {          
+              JOptionPane.showMessageDialog(null, "You have reached max table booking for the week");  
+               new StudentHomePage().setVisible(true);                 
+            }
+         
+        
+            
+           
+           
+     
+       
+
     }//GEN-LAST:event_bookButtonActionPerformed
+
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
+        // TODO add your handling code here:
+         
+        
+    }//GEN-LAST:event_backMouseClicked
+
+    private void navigateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navigateMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_navigateMouseClicked
+
+    private void navigateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_navigateActionPerformed
+        // TODO add your handling code here:
+        if(navigate.getSelectedItem().toString().equals("Back To Home Page")){
+            new StudentHomePage().setVisible(true);
+            dispose();
+        }
+        if(navigate.getSelectedItem().toString().equals("My Profile")){
+            new StudentProfilePage().setVisible(true);
+            dispose();
+        }
+        if(navigate.getSelectedItem().toString().equals("Order Page")){
+            new StudentOrdersPage().setVisible(true);
+            dispose();
+        }
+        if(navigate.getSelectedItem().toString().equals("Logout")){
+            new NEUHomePage().setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_navigateActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String floor = SnellLibraryFloorPicker.selectFloor.getSelectedItem().toString();
+
+         if(floor.equals("Floor 1")){
+         new SnellLibraryBookingPage().setVisible(true);
+         dispose();  
+        }
+        
+        if(floor.equals("Floor 2")){
+         new SnellLibraryBookingFloor2().setVisible(true);
+         dispose(); 
+        }
+        
+        if(floor.equals("Floor 3")){
+        new SnellLibraryBookingFloor3().setVisible(true);
+         dispose(); 
+        }
+        
+        if(floor.equals("Floor 4")){
+        new SnellLibraryBookingFloor4().setVisible(true);
+         dispose(); 
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -351,13 +796,21 @@ public class SnellLibrarySlotBooking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel back;
     private javax.swing.JButton bookButton;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> navigate;
     private javax.swing.JTextField numberField;
     private javax.swing.JTable slotTable;
     private javax.swing.JTextField timingField;
     // End of variables declaration//GEN-END:variables
+
+
+    
+
 }
