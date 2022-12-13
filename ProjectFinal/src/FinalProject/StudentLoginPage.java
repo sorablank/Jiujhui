@@ -4,8 +4,12 @@
  */
 package FinalProject;
 
+import FinalProject.ConnectionClass;
+import FinalProject.FacultyHomePage;
+import FinalProject.StudentHomePage;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -19,6 +23,7 @@ public class StudentLoginPage extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame1
      */
+    Connection con;
     public StudentLoginPage() {
         initComponents();
     }
@@ -36,6 +41,7 @@ public class StudentLoginPage extends javax.swing.JFrame {
         logIn = new javax.swing.JButton();
         passwordField = new javax.swing.JTextField();
         usernameField = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,6 +74,15 @@ public class StudentLoginPage extends javax.swing.JFrame {
         });
         jPanel1.add(usernameField);
         usernameField.setBounds(780, 354, 360, 90);
+
+        jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2);
+        jButton2.setBounds(90, 90, 80, 23);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LoginImage.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -108,12 +123,14 @@ public class StudentLoginPage extends javax.swing.JFrame {
         
         String present;
         present = "0";
+        String role = "";
         String usernameInput = usernameField.getText();
         String passwordInput = passwordField.getText();
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection StudentConnection = DriverManager.getConnection("jdbc:mysql://192.168.161.158:3306/finalproject","root", "");
-            Statement StudentStatement = (Statement) StudentConnection.createStatement();
+            //Class.forName("com.mysql.jdbc.Driver");
+            //Connection StudentConnection = DriverManager.getConnection("jdbc:mysql://localhost/finalproject","root", "");
+            con = ConnectionClass.getConnection();
+            Statement StudentStatement = (Statement) con.createStatement();
             String StudentSql = ("Select * from student_info");
 
             ResultSet StudentResult = StudentStatement.executeQuery(StudentSql);
@@ -131,8 +148,29 @@ public class StudentLoginPage extends javax.swing.JFrame {
 
             if(present.equals("1"))
             {
-                new StudentHomePage().setVisible(true);
-                dispose();
+                try{                       
+                    String slotSql = ("Select role from student_info where username = '"+usernameInput+"' and password = '"+passwordInput+"' ");           
+                    PreparedStatement slotPreparedStatement = con.prepareStatement(slotSql); 
+                    ResultSet c = slotPreparedStatement.executeQuery();                       
+                    while(c.next())
+                    {
+                     role = c.getString("role");
+                    }
+                } catch(Exception e){
+                    JOptionPane.showMessageDialog(null, e);
+                }
+                
+                if (role.equals("student")){
+                    new StudentHomePage().setVisible(true);
+                    dispose();
+                }
+                
+                if (role.equals("faculty")){
+                    new FacultyHomePage().setVisible(true);
+                    dispose();
+                }
+                
+                
             }
             else {
                 JOptionPane.showMessageDialog(null, "Wrong credentials. Please check credentials and try again");
@@ -149,6 +187,12 @@ public class StudentLoginPage extends javax.swing.JFrame {
     private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameFieldActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        new NEUHomePage().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,14 +231,11 @@ public class StudentLoginPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logIn;
     private javax.swing.JTextField passwordField;
-
     public static javax.swing.JTextField usernameField;
-
-    private javax.swing.JTextField usernameField;
-
     // End of variables declaration//GEN-END:variables
 }

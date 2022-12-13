@@ -36,7 +36,6 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         Q = new javax.swing.JToggleButton();
-        javax.swing.JToggleButton V = new javax.swing.JToggleButton();
         U = new javax.swing.JToggleButton();
         T = new javax.swing.JToggleButton();
         R = new javax.swing.JToggleButton();
@@ -168,11 +167,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         T0S4 = new javax.swing.JToggleButton();
         T0S6 = new javax.swing.JToggleButton();
         T0S7 = new javax.swing.JToggleButton();
-
+        V = new javax.swing.JToggleButton();
         seatNumber = new javax.swing.JTextField();
-
-        jLabel1 = new javax.swing.JLabel();
-
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1920, 1080));
@@ -199,14 +195,6 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         });
         jPanel1.add(Q);
         Q.setBounds(10, 640, 90, 50);
-
-        V.setBackground(new java.awt.Color(83, 82, 134));
-        buttonGroup1.add(V);
-        V.setForeground(new java.awt.Color(255, 255, 255));
-        V.setText("V");
-        V.setBorder(null);
-        jPanel1.add(V);
-        V.setBounds(630, 60, 90, 150);
 
         U.setBackground(new java.awt.Color(83, 82, 134));
         buttonGroup1.add(U);
@@ -236,6 +224,11 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 TStateChanged(evt);
             }
         });
+        T.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TActionPerformed(evt);
+            }
+        });
         jPanel1.add(T);
         T.setBounds(830, 60, 90, 150);
 
@@ -247,6 +240,11 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         R.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 RStateChanged(evt);
+            }
+        });
+        R.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RActionPerformed(evt);
             }
         });
         jPanel1.add(R);
@@ -262,6 +260,11 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 SStateChanged(evt);
             }
         });
+        S.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SActionPerformed(evt);
+            }
+        });
         jPanel1.add(S);
         S.setBounds(930, 140, 70, 70);
 
@@ -273,6 +276,11 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         K.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 KStateChanged(evt);
+            }
+        });
+        K.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KActionPerformed(evt);
             }
         });
         jPanel1.add(K);
@@ -306,6 +314,11 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 MStateChanged(evt);
             }
         });
+        M.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MActionPerformed(evt);
+            }
+        });
         jPanel1.add(M);
         M.setBounds(390, 640, 90, 50);
 
@@ -327,14 +340,18 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(N);
         N.setBounds(290, 640, 90, 50);
 
-        T1S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T1S1);
-        T1S1.setForeground(new java.awt.Color(255, 255, 255));
+        T1S1.setForeground(new java.awt.Color(51, 51, 51));
         T1S1.setText("T1S1");
         T1S1.setBorder(null);
         T1S1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 T1S1StateChanged(evt);
+            }
+        });
+        T1S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T1S1ActionPerformed(evt);
             }
         });
         jPanel1.add(T1S1);
@@ -348,6 +365,11 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         P.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 PStateChanged(evt);
+            }
+        });
+        P.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PActionPerformed(evt);
             }
         });
         jPanel1.add(P);
@@ -381,6 +403,11 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 JStateChanged(evt);
             }
         });
+        J.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JActionPerformed(evt);
+            }
+        });
         jPanel1.add(J);
         J.setBounds(760, 630, 42, 60);
 
@@ -392,6 +419,11 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         D.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 DStateChanged(evt);
+            }
+        });
+        D.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DActionPerformed(evt);
             }
         });
         jPanel1.add(D);
@@ -515,6 +547,11 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 H1StateChanged(evt);
             }
         });
+        H1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                H1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(H1);
         H1.setBounds(810, 630, 42, 60);
 
@@ -613,9 +650,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T24);
         T24.setBounds(430, 550, 20, 16);
 
-        T1S5.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T1S5);
-        T1S5.setForeground(new java.awt.Color(255, 255, 255));
+        T1S5.setForeground(new java.awt.Color(51, 51, 51));
         T1S5.setText("T1S5");
         T1S5.setBorder(null);
         T1S5.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -623,12 +659,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T1S5StateChanged(evt);
             }
         });
+        T1S5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T1S5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T1S5);
         T1S5.setBounds(1090, 430, 35, 35);
 
-        T1S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T1S2);
-        T1S2.setForeground(new java.awt.Color(255, 255, 255));
+        T1S2.setForeground(new java.awt.Color(51, 51, 51));
         T1S2.setText("T1S2");
         T1S2.setBorder(null);
         T1S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -636,12 +676,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T1S2StateChanged(evt);
             }
         });
+        T1S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T1S2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T1S2);
         T1S2.setBounds(1175, 430, 35, 35);
 
-        T1S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T1S3);
-        T1S3.setForeground(new java.awt.Color(255, 255, 255));
+        T1S3.setForeground(new java.awt.Color(51, 51, 51));
         T1S3.setText("T1S3");
         T1S3.setBorder(null);
         T1S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -649,12 +693,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T1S3StateChanged(evt);
             }
         });
+        T1S3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T1S3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T1S3);
         T1S3.setBounds(1175, 370, 35, 35);
 
-        T1S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T1S4);
-        T1S4.setForeground(new java.awt.Color(255, 255, 255));
+        T1S4.setForeground(new java.awt.Color(51, 51, 51));
         T1S4.setText("T1S4");
         T1S4.setBorder(null);
         T1S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -662,12 +710,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T1S4StateChanged(evt);
             }
         });
+        T1S4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T1S4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T1S4);
         T1S4.setBounds(1090, 370, 35, 35);
 
-        T1S6.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T1S6);
-        T1S6.setForeground(new java.awt.Color(255, 255, 255));
+        T1S6.setForeground(new java.awt.Color(51, 51, 51));
         T1S6.setText("T1S6");
         T1S6.setBorder(null);
         T1S6.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -675,12 +727,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T1S6StateChanged(evt);
             }
         });
+        T1S6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T1S6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T1S6);
         T1S6.setBounds(1090, 490, 35, 35);
 
-        T2S6.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T2S6);
-        T2S6.setForeground(new java.awt.Color(255, 255, 255));
+        T2S6.setForeground(new java.awt.Color(51, 51, 51));
         T2S6.setText("T2S6");
         T2S6.setBorder(null);
         T2S6.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -688,12 +744,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T2S6StateChanged(evt);
             }
         });
+        T2S6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T2S6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T2S6);
         T2S6.setBounds(1270, 490, 35, 35);
 
-        T2S5.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T2S5);
-        T2S5.setForeground(new java.awt.Color(255, 255, 255));
+        T2S5.setForeground(new java.awt.Color(51, 51, 51));
         T2S5.setText("T2S5");
         T2S5.setBorder(null);
         T2S5.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -701,12 +761,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T2S5StateChanged(evt);
             }
         });
+        T2S5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T2S5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T2S5);
         T2S5.setBounds(1270, 430, 35, 35);
 
-        T2S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T2S4);
-        T2S4.setForeground(new java.awt.Color(255, 255, 255));
+        T2S4.setForeground(new java.awt.Color(51, 51, 51));
         T2S4.setText("T2S4");
         T2S4.setBorder(null);
         T2S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -714,12 +778,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T2S4StateChanged(evt);
             }
         });
+        T2S4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T2S4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T2S4);
         T2S4.setBounds(1270, 370, 35, 35);
 
-        T2S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T2S3);
-        T2S3.setForeground(new java.awt.Color(255, 255, 255));
+        T2S3.setForeground(new java.awt.Color(51, 51, 51));
         T2S3.setText("T2S3");
         T2S3.setBorder(null);
         T2S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -727,12 +795,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T2S3StateChanged(evt);
             }
         });
+        T2S3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T2S3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T2S3);
         T2S3.setBounds(1360, 370, 35, 35);
 
-        T2S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T2S2);
-        T2S2.setForeground(new java.awt.Color(255, 255, 255));
+        T2S2.setForeground(new java.awt.Color(51, 51, 51));
         T2S2.setText("T2S2");
         T2S2.setBorder(null);
         T2S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -740,12 +812,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T2S2StateChanged(evt);
             }
         });
+        T2S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T2S2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T2S2);
         T2S2.setBounds(1360, 430, 35, 35);
 
-        T2S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T2S1);
-        T2S1.setForeground(new java.awt.Color(255, 255, 255));
+        T2S1.setForeground(new java.awt.Color(51, 51, 51));
         T2S1.setText("T2S1");
         T2S1.setBorder(null);
         T2S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -753,19 +829,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T2S1StateChanged(evt);
             }
         });
-
         T2S1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 T2S1ActionPerformed(evt);
             }
         });
-
         jPanel1.add(T2S1);
         T2S1.setBounds(1360, 490, 35, 35);
 
-        T4S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T4S3);
-        T4S3.setForeground(new java.awt.Color(255, 255, 255));
+        T4S3.setForeground(new java.awt.Color(51, 51, 51));
         T4S3.setText("T4S3");
         T4S3.setBorder(null);
         T4S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -773,12 +846,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T4S3StateChanged(evt);
             }
         });
+        T4S3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T4S3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T4S3);
         T4S3.setBounds(1370, 200, 35, 35);
 
-        T4S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T4S2);
-        T4S2.setForeground(new java.awt.Color(255, 255, 255));
+        T4S2.setForeground(new java.awt.Color(51, 51, 51));
         T4S2.setText("T4S2");
         T4S2.setBorder(null);
         T4S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -794,9 +871,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T4S2);
         T4S2.setBounds(1300, 200, 35, 35);
 
-        T4S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T4S1);
-        T4S1.setForeground(new java.awt.Color(255, 255, 255));
+        T4S1.setForeground(new java.awt.Color(51, 51, 51));
         T4S1.setText("T4S1");
         T4S1.setBorder(null);
         T4S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -804,12 +880,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T4S1StateChanged(evt);
             }
         });
+        T4S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T4S1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T4S1);
         T4S1.setBounds(1220, 200, 35, 35);
 
-        T4S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T4S4);
-        T4S4.setForeground(new java.awt.Color(255, 255, 255));
+        T4S4.setForeground(new java.awt.Color(51, 51, 51));
         T4S4.setText("T4S4");
         T4S4.setBorder(null);
         T4S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -817,12 +897,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T4S4StateChanged(evt);
             }
         });
+        T4S4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T4S4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T4S4);
         T4S4.setBounds(1220, 110, 35, 35);
 
-        T4S5.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T4S5);
-        T4S5.setForeground(new java.awt.Color(255, 255, 255));
+        T4S5.setForeground(new java.awt.Color(51, 51, 51));
         T4S5.setText("T4S5");
         T4S5.setBorder(null);
         T4S5.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -838,9 +922,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T4S5);
         T4S5.setBounds(1300, 110, 35, 35);
 
-        T4S6.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T4S6);
-        T4S6.setForeground(new java.awt.Color(255, 255, 255));
+        T4S6.setForeground(new java.awt.Color(51, 51, 51));
         T4S6.setText("T4S6");
         T4S6.setBorder(null);
         T4S6.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -848,12 +931,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T4S6StateChanged(evt);
             }
         });
+        T4S6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T4S6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T4S6);
         T4S6.setBounds(1370, 110, 35, 35);
 
-        T6S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T6S1);
-        T6S1.setForeground(new java.awt.Color(255, 255, 255));
+        T6S1.setForeground(new java.awt.Color(51, 51, 51));
         T6S1.setText("T6S1");
         T6S1.setBorder(null);
         T6S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -869,9 +956,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T6S1);
         T6S1.setBounds(1040, 48, 35, 35);
 
-        T6S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T6S2);
-        T6S2.setForeground(new java.awt.Color(255, 255, 255));
+        T6S2.setForeground(new java.awt.Color(51, 51, 51));
         T6S2.setText("T6S2");
         T6S2.setBorder(null);
         T6S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -887,9 +973,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T6S2);
         T6S2.setBounds(1100, 47, 35, 35);
 
-        T6S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T6S3);
-        T6S3.setForeground(new java.awt.Color(255, 255, 255));
+        T6S3.setForeground(new java.awt.Color(51, 51, 51));
         T6S3.setText("T6S3");
         T6S3.setBorder(null);
         T6S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -897,12 +982,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T6S3StateChanged(evt);
             }
         });
+        T6S3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T6S3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T6S3);
         T6S3.setBounds(1160, 47, 35, 35);
 
-        T6S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T6S4);
-        T6S4.setForeground(new java.awt.Color(255, 255, 255));
+        T6S4.setForeground(new java.awt.Color(51, 51, 51));
         T6S4.setText("T6S4");
         T6S4.setBorder(null);
         T6S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -910,12 +999,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T6S4StateChanged(evt);
             }
         });
+        T6S4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T6S4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T6S4);
         T6S4.setBounds(1220, 47, 35, 35);
 
-        T6S5.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T6S5);
-        T6S5.setForeground(new java.awt.Color(255, 255, 255));
+        T6S5.setForeground(new java.awt.Color(51, 51, 51));
         T6S5.setText("T6S5");
         T6S5.setBorder(null);
         T6S5.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -931,9 +1024,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T6S5);
         T6S5.setBounds(1280, 47, 35, 35);
 
-        T6S7.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T6S7);
-        T6S7.setForeground(new java.awt.Color(255, 255, 255));
+        T6S7.setForeground(new java.awt.Color(51, 51, 51));
         T6S7.setText("T6S7");
         T6S7.setBorder(null);
         T6S7.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -941,12 +1033,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T6S7StateChanged(evt);
             }
         });
+        T6S7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T6S7ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T6S7);
         T6S7.setBounds(1400, 47, 35, 35);
 
-        T6S6.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T6S6);
-        T6S6.setForeground(new java.awt.Color(255, 255, 255));
+        T6S6.setForeground(new java.awt.Color(51, 51, 51));
         T6S6.setText("T6S6");
         T6S6.setBorder(null);
         T6S6.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -954,12 +1050,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T6S6StateChanged(evt);
             }
         });
+        T6S6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T6S6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T6S6);
         T6S6.setBounds(1340, 47, 35, 35);
 
-        T5S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T5S1);
-        T5S1.setForeground(new java.awt.Color(255, 255, 255));
+        T5S1.setForeground(new java.awt.Color(51, 51, 51));
         T5S1.setText("T5S1");
         T5S1.setBorder(null);
         T5S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -967,12 +1067,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T5S1StateChanged(evt);
             }
         });
+        T5S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T5S1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T5S1);
         T5S1.setBounds(1160, 110, 35, 35);
 
-        T5S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T5S2);
-        T5S2.setForeground(new java.awt.Color(255, 255, 255));
+        T5S2.setForeground(new java.awt.Color(51, 51, 51));
         T5S2.setText("T5S2");
         T5S2.setBorder(null);
         T5S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -988,9 +1092,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T5S2);
         T5S2.setBounds(1060, 110, 35, 35);
 
-        T3S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T3S2);
-        T3S2.setForeground(new java.awt.Color(255, 255, 255));
+        T3S2.setForeground(new java.awt.Color(51, 51, 51));
         T3S2.setText("T3S2");
         T3S2.setBorder(null);
         T3S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1006,9 +1109,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T3S2);
         T3S2.setBounds(1060, 230, 35, 35);
 
-        T3S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T3S1);
-        T3S1.setForeground(new java.awt.Color(255, 255, 255));
+        T3S1.setForeground(new java.awt.Color(51, 51, 51));
         T3S1.setText("T3S1");
         T3S1.setBorder(null);
         T3S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1024,9 +1126,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T3S1);
         T3S1.setBounds(1150, 230, 35, 35);
 
-        T7S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T7S1);
-        T7S1.setForeground(new java.awt.Color(255, 255, 255));
+        T7S1.setForeground(new java.awt.Color(51, 51, 51));
         T7S1.setText("T7S1");
         T7S1.setBorder(null);
         T7S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1042,9 +1143,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T7S1);
         T7S1.setBounds(970, 280, 35, 35);
 
-        T7S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T7S2);
-        T7S2.setForeground(new java.awt.Color(255, 255, 255));
+        T7S2.setForeground(new java.awt.Color(51, 51, 51));
         T7S2.setText("T7S2");
         T7S2.setBorder(null);
         T7S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1060,9 +1160,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T7S2);
         T7S2.setBounds(888, 282, 35, 35);
 
-        T8S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T8S1);
-        T8S1.setForeground(new java.awt.Color(255, 255, 255));
+        T8S1.setForeground(new java.awt.Color(51, 51, 51));
         T8S1.setText("T8S1");
         T8S1.setBorder(null);
         T8S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1078,9 +1177,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T8S1);
         T8S1.setBounds(953, 410, 35, 35);
 
-        T8S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T8S2);
-        T8S2.setForeground(new java.awt.Color(255, 255, 255));
+        T8S2.setForeground(new java.awt.Color(51, 51, 51));
         T8S2.setText("T8S2");
         T8S2.setBorder(null);
         T8S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1096,9 +1194,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T8S2);
         T8S2.setBounds(840, 410, 35, 35);
 
-        T9S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T9S1);
-        T9S1.setForeground(new java.awt.Color(255, 255, 255));
+        T9S1.setForeground(new java.awt.Color(51, 51, 51));
         T9S1.setText("T9S1");
         T9S1.setBorder(null);
         T9S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1114,9 +1211,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T9S1);
         T9S1.setBounds(953, 490, 35, 35);
 
-        T9S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T9S2);
-        T9S2.setForeground(new java.awt.Color(255, 255, 255));
+        T9S2.setForeground(new java.awt.Color(51, 51, 51));
         T9S2.setText("T9S2");
         T9S2.setBorder(null);
         T9S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1132,9 +1228,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T9S2);
         T9S2.setBounds(840, 490, 35, 35);
 
-        T13S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T13S4);
-        T13S4.setForeground(new java.awt.Color(255, 255, 255));
+        T13S4.setForeground(new java.awt.Color(51, 51, 51));
         T13S4.setText("T13S4");
         T13S4.setBorder(null);
         T13S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1142,12 +1237,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T13S4StateChanged(evt);
             }
         });
+        T13S4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T13S4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T13S4);
         T13S4.setBounds(380, 560, 35, 35);
 
-        T13S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T13S3);
-        T13S3.setForeground(new java.awt.Color(255, 255, 255));
+        T13S3.setForeground(new java.awt.Color(51, 51, 51));
         T13S3.setText("T13S3");
         T13S3.setBorder(null);
         T13S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1155,12 +1254,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T13S3StateChanged(evt);
             }
         });
+        T13S3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T13S3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T13S3);
         T13S3.setBounds(380, 510, 35, 35);
 
-        T13S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T13S2);
-        T13S2.setForeground(new java.awt.Color(255, 255, 255));
+        T13S2.setForeground(new java.awt.Color(51, 51, 51));
         T13S2.setText("T13S2");
         T13S2.setBorder(null);
         T13S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1168,12 +1271,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T13S2StateChanged(evt);
             }
         });
+        T13S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T13S2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T13S2);
         T13S2.setBounds(460, 510, 35, 35);
 
-        T13S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T13S1);
-        T13S1.setForeground(new java.awt.Color(255, 255, 255));
+        T13S1.setForeground(new java.awt.Color(51, 51, 51));
         T13S1.setText("T13S1");
         T13S1.setBorder(null);
         T13S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1181,12 +1288,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T13S1StateChanged(evt);
             }
         });
+        T13S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T13S1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T13S1);
         T13S1.setBounds(460, 560, 35, 35);
 
-        T18S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T18S4);
-        T18S4.setForeground(new java.awt.Color(255, 255, 255));
+        T18S4.setForeground(new java.awt.Color(51, 51, 51));
         T18S4.setText("T18S4");
         T18S4.setBorder(null);
         T18S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1202,9 +1313,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T18S4);
         T18S4.setBounds(380, 220, 35, 35);
 
-        T18S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T18S3);
-        T18S3.setForeground(new java.awt.Color(255, 255, 255));
+        T18S3.setForeground(new java.awt.Color(51, 51, 51));
         T18S3.setText("T18S3");
         T18S3.setBorder(null);
         T18S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1220,9 +1330,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T18S3);
         T18S3.setBounds(460, 220, 35, 35);
 
-        T18S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T18S2);
-        T18S2.setForeground(new java.awt.Color(255, 255, 255));
+        T18S2.setForeground(new java.awt.Color(51, 51, 51));
         T18S2.setText("T18S2");
         T18S2.setBorder(null);
         T18S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1230,12 +1339,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T18S2StateChanged(evt);
             }
         });
+        T18S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T18S2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T18S2);
         T18S2.setBounds(460, 270, 35, 35);
 
-        T18S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T18S1);
-        T18S1.setForeground(new java.awt.Color(255, 255, 255));
+        T18S1.setForeground(new java.awt.Color(51, 51, 51));
         T18S1.setText("T18S1");
         T18S1.setBorder(null);
         T18S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1243,12 +1356,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T18S1StateChanged(evt);
             }
         });
+        T18S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T18S1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T18S1);
         T18S1.setBounds(460, 320, 35, 35);
 
-        T18S6.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T18S6);
-        T18S6.setForeground(new java.awt.Color(255, 255, 255));
+        T18S6.setForeground(new java.awt.Color(51, 51, 51));
         T18S6.setText("T18S6");
         T18S6.setBorder(null);
         T18S6.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1256,12 +1373,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T18S6StateChanged(evt);
             }
         });
+        T18S6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T18S6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T18S6);
         T18S6.setBounds(380, 320, 35, 35);
 
-        T18S5.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T18S5);
-        T18S5.setForeground(new java.awt.Color(255, 255, 255));
+        T18S5.setForeground(new java.awt.Color(51, 51, 51));
         T18S5.setText("T13S5");
         T18S5.setActionCommand("T18S5");
         T18S5.setBorder(null);
@@ -1270,12 +1391,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T18S5StateChanged(evt);
             }
         });
+        T18S5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T18S5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T18S5);
         T18S5.setBounds(380, 270, 35, 35);
 
-        T12S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T12S3);
-        T12S3.setForeground(new java.awt.Color(255, 255, 255));
+        T12S3.setForeground(new java.awt.Color(51, 51, 51));
         T12S3.setText("T12S3");
         T12S3.setBorder(null);
         T12S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1283,12 +1408,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T12S3StateChanged(evt);
             }
         });
+        T12S3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T12S3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T12S3);
         T12S3.setBounds(550, 510, 35, 35);
 
-        T12S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T12S4);
-        T12S4.setForeground(new java.awt.Color(255, 255, 255));
+        T12S4.setForeground(new java.awt.Color(51, 51, 51));
         T12S4.setText("T12S4");
         T12S4.setBorder(null);
         T12S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1296,12 +1425,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T12S4StateChanged(evt);
             }
         });
+        T12S4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T12S4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T12S4);
         T12S4.setBounds(550, 560, 35, 35);
 
-        T12S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T12S1);
-        T12S1.setForeground(new java.awt.Color(255, 255, 255));
+        T12S1.setForeground(new java.awt.Color(51, 51, 51));
         T12S1.setText("T12S1");
         T12S1.setBorder(null);
         T12S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1309,12 +1442,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T12S1StateChanged(evt);
             }
         });
+        T12S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T12S1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T12S1);
         T12S1.setBounds(630, 560, 35, 35);
 
-        T12S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T12S2);
-        T12S2.setForeground(new java.awt.Color(255, 255, 255));
+        T12S2.setForeground(new java.awt.Color(51, 51, 51));
         T12S2.setText("T12S2");
         T12S2.setBorder(null);
         T12S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1322,12 +1459,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T12S2StateChanged(evt);
             }
         });
+        T12S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T12S2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T12S2);
         T12S2.setBounds(630, 510, 35, 35);
 
-        T14S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T14S2);
-        T14S2.setForeground(new java.awt.Color(255, 255, 255));
+        T14S2.setForeground(new java.awt.Color(51, 51, 51));
         T14S2.setText("T14S2");
         T14S2.setBorder(null);
         T14S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1335,12 +1476,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T14S2StateChanged(evt);
             }
         });
+        T14S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T14S2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T14S2);
         T14S2.setBounds(290, 510, 35, 35);
 
-        T14S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T14S1);
-        T14S1.setForeground(new java.awt.Color(255, 255, 255));
+        T14S1.setForeground(new java.awt.Color(51, 51, 51));
         T14S1.setText("T14S1");
         T14S1.setBorder(null);
         T14S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1348,12 +1493,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T14S1StateChanged(evt);
             }
         });
+        T14S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T14S1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T14S1);
         T14S1.setBounds(290, 560, 35, 35);
 
-        T14S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T14S4);
-        T14S4.setForeground(new java.awt.Color(255, 255, 255));
+        T14S4.setForeground(new java.awt.Color(51, 51, 51));
         T14S4.setText("T14S4");
         T14S4.setBorder(null);
         T14S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1361,12 +1510,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T14S4StateChanged(evt);
             }
         });
+        T14S4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T14S4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T14S4);
         T14S4.setBounds(210, 560, 35, 35);
 
-        T14S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T14S3);
-        T14S3.setForeground(new java.awt.Color(255, 255, 255));
+        T14S3.setForeground(new java.awt.Color(51, 51, 51));
         T14S3.setText("T13S3");
         T14S3.setBorder(null);
         T14S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1374,12 +1527,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T14S3StateChanged(evt);
             }
         });
+        T14S3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T14S3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T14S3);
         T14S3.setBounds(210, 510, 35, 35);
 
-        T15S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T15S3);
-        T15S3.setForeground(new java.awt.Color(255, 255, 255));
+        T15S3.setForeground(new java.awt.Color(51, 51, 51));
         T15S3.setText("T15S3");
         T15S3.setBorder(null);
         T15S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1387,12 +1544,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T15S3StateChanged(evt);
             }
         });
+        T15S3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T15S3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T15S3);
         T15S3.setBounds(30, 510, 35, 35);
 
-        T15S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T15S4);
-        T15S4.setForeground(new java.awt.Color(255, 255, 255));
+        T15S4.setForeground(new java.awt.Color(51, 51, 51));
         T15S4.setText("T15S4");
         T15S4.setBorder(null);
         T15S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1408,9 +1569,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T15S4);
         T15S4.setBounds(30, 560, 35, 35);
 
-        T15S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T15S1);
-        T15S1.setForeground(new java.awt.Color(255, 255, 255));
+        T15S1.setForeground(new java.awt.Color(51, 51, 51));
         T15S1.setText("T15S1");
         T15S1.setBorder(null);
         T15S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1418,12 +1578,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T15S1StateChanged(evt);
             }
         });
+        T15S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T15S1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T15S1);
         T15S1.setBounds(120, 560, 35, 35);
 
-        T15S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T15S2);
-        T15S2.setForeground(new java.awt.Color(255, 255, 255));
+        T15S2.setForeground(new java.awt.Color(51, 51, 51));
         T15S2.setText("T15S2");
         T15S2.setBorder(null);
         T15S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1431,12 +1595,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T15S2StateChanged(evt);
             }
         });
+        T15S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T15S2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T15S2);
         T15S2.setBounds(120, 510, 35, 35);
 
-        T19S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T19S4);
-        T19S4.setForeground(new java.awt.Color(255, 255, 255));
+        T19S4.setForeground(new java.awt.Color(51, 51, 51));
         T19S4.setText("T19S4");
         T19S4.setBorder(null);
         T19S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1444,12 +1612,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T19S4StateChanged(evt);
             }
         });
+        T19S4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T19S4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T19S4);
         T19S4.setBounds(550, 220, 35, 35);
 
-        T19S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T19S3);
-        T19S3.setForeground(new java.awt.Color(255, 255, 255));
+        T19S3.setForeground(new java.awt.Color(51, 51, 51));
         T19S3.setText("T19S3");
         T19S3.setActionCommand("T18S3");
         T19S3.setBorder(null);
@@ -1466,9 +1638,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T19S3);
         T19S3.setBounds(630, 220, 35, 35);
 
-        T19S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T19S2);
-        T19S2.setForeground(new java.awt.Color(255, 255, 255));
+        T19S2.setForeground(new java.awt.Color(51, 51, 51));
         T19S2.setText("T19S2");
         T19S2.setBorder(null);
         T19S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1476,12 +1647,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T19S2StateChanged(evt);
             }
         });
+        T19S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T19S2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T19S2);
         T19S2.setBounds(630, 270, 35, 35);
 
-        T19S5.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T19S5);
-        T19S5.setForeground(new java.awt.Color(255, 255, 255));
+        T19S5.setForeground(new java.awt.Color(51, 51, 51));
         T19S5.setText("T19S5");
         T19S5.setActionCommand("T18S5");
         T19S5.setBorder(null);
@@ -1490,12 +1665,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T19S5StateChanged(evt);
             }
         });
+        T19S5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T19S5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T19S5);
         T19S5.setBounds(550, 270, 35, 35);
 
-        T19S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T19S1);
-        T19S1.setForeground(new java.awt.Color(255, 255, 255));
+        T19S1.setForeground(new java.awt.Color(51, 51, 51));
         T19S1.setText("T19S1");
         T19S1.setBorder(null);
         T19S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1503,12 +1682,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T19S1StateChanged(evt);
             }
         });
+        T19S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T19S1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T19S1);
         T19S1.setBounds(630, 320, 35, 35);
 
-        T19S6.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T19S6);
-        T19S6.setForeground(new java.awt.Color(255, 255, 255));
+        T19S6.setForeground(new java.awt.Color(51, 51, 51));
         T19S6.setText("T19S6");
         T19S6.setBorder(null);
         T19S6.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1516,12 +1699,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T19S6StateChanged(evt);
             }
         });
+        T19S6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T19S6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T19S6);
         T19S6.setBounds(550, 320, 35, 35);
 
-        T17S6.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T17S6);
-        T17S6.setForeground(new java.awt.Color(255, 255, 255));
+        T17S6.setForeground(new java.awt.Color(51, 51, 51));
         T17S6.setText("T17S6");
         T17S6.setBorder(null);
         T17S6.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1529,12 +1716,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T17S6StateChanged(evt);
             }
         });
+        T17S6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T17S6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T17S6);
         T17S6.setBounds(210, 320, 35, 35);
 
-        T17S5.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T17S5);
-        T17S5.setForeground(new java.awt.Color(255, 255, 255));
+        T17S5.setForeground(new java.awt.Color(51, 51, 51));
         T17S5.setText("T17S5");
         T17S5.setActionCommand("T18S5");
         T17S5.setBorder(null);
@@ -1543,12 +1734,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T17S5StateChanged(evt);
             }
         });
+        T17S5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T17S5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T17S5);
         T17S5.setBounds(210, 270, 35, 35);
 
-        T17S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T17S4);
-        T17S4.setForeground(new java.awt.Color(255, 255, 255));
+        T17S4.setForeground(new java.awt.Color(51, 51, 51));
         T17S4.setText("T17S4");
         T17S4.setBorder(null);
         T17S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1556,12 +1751,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T17S4StateChanged(evt);
             }
         });
+        T17S4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T17S4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T17S4);
         T17S4.setBounds(210, 220, 35, 35);
 
-        T17S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T17S3);
-        T17S3.setForeground(new java.awt.Color(255, 255, 255));
+        T17S3.setForeground(new java.awt.Color(51, 51, 51));
         T17S3.setText("T17S3");
         T17S3.setBorder(null);
         T17S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1577,9 +1776,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T17S3);
         T17S3.setBounds(290, 220, 35, 35);
 
-        T17S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T17S2);
-        T17S2.setForeground(new java.awt.Color(255, 255, 255));
+        T17S2.setForeground(new java.awt.Color(51, 51, 51));
         T17S2.setText("T17S2");
         T17S2.setBorder(null);
         T17S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1587,12 +1785,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T17S2StateChanged(evt);
             }
         });
+        T17S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T17S2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T17S2);
         T17S2.setBounds(290, 270, 35, 35);
 
-        T17S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T17S1);
-        T17S1.setForeground(new java.awt.Color(255, 255, 255));
+        T17S1.setForeground(new java.awt.Color(51, 51, 51));
         T17S1.setText("T17S1");
         T17S1.setBorder(null);
         T17S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1600,12 +1802,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T17S1StateChanged(evt);
             }
         });
+        T17S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T17S1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T17S1);
         T17S1.setBounds(290, 320, 35, 35);
 
-        T16S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T16S4);
-        T16S4.setForeground(new java.awt.Color(255, 255, 255));
+        T16S4.setForeground(new java.awt.Color(51, 51, 51));
         T16S4.setText("T16S4");
         T16S4.setBorder(null);
         T16S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1613,12 +1819,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T16S4StateChanged(evt);
             }
         });
+        T16S4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T16S4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T16S4);
         T16S4.setBounds(30, 220, 35, 35);
 
-        T16S6.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T16S6);
-        T16S6.setForeground(new java.awt.Color(255, 255, 255));
+        T16S6.setForeground(new java.awt.Color(51, 51, 51));
         T16S6.setText("T16S6");
         T16S6.setBorder(null);
         T16S6.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1626,12 +1836,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T16S6StateChanged(evt);
             }
         });
+        T16S6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T16S6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T16S6);
         T16S6.setBounds(30, 320, 35, 35);
 
-        T16S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T16S3);
-        T16S3.setForeground(new java.awt.Color(255, 255, 255));
+        T16S3.setForeground(new java.awt.Color(51, 51, 51));
         T16S3.setText("T16S3");
         T16S3.setBorder(null);
         T16S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1647,9 +1861,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T16S3);
         T16S3.setBounds(110, 220, 35, 35);
 
-        T16S5.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T16S5);
-        T16S5.setForeground(new java.awt.Color(255, 255, 255));
+        T16S5.setForeground(new java.awt.Color(51, 51, 51));
         T16S5.setText("T16S5");
         T16S5.setActionCommand("T18S5");
         T16S5.setBorder(null);
@@ -1658,12 +1871,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T16S5StateChanged(evt);
             }
         });
+        T16S5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T16S5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T16S5);
         T16S5.setBounds(30, 270, 35, 35);
 
-        T16S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T16S2);
-        T16S2.setForeground(new java.awt.Color(255, 255, 255));
+        T16S2.setForeground(new java.awt.Color(51, 51, 51));
         T16S2.setText("T16S2");
         T16S2.setBorder(null);
         T16S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1671,12 +1888,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T16S2StateChanged(evt);
             }
         });
+        T16S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T16S2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T16S2);
         T16S2.setBounds(110, 270, 35, 35);
 
-        T16S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T16S1);
-        T16S1.setForeground(new java.awt.Color(255, 255, 255));
+        T16S1.setForeground(new java.awt.Color(51, 51, 51));
         T16S1.setText("T16S1");
         T16S1.setBorder(null);
         T16S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1684,12 +1905,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T16S1StateChanged(evt);
             }
         });
+        T16S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T16S1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T16S1);
         T16S1.setBounds(110, 320, 35, 35);
 
-        T10S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T10S1);
-        T10S1.setForeground(new java.awt.Color(255, 255, 255));
+        T10S1.setForeground(new java.awt.Color(51, 51, 51));
         T10S1.setText("T10S1");
         T10S1.setBorder(null);
         T10S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1705,9 +1930,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T10S1);
         T10S1.setBounds(810, 280, 35, 35);
 
-        T10S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T10S2);
-        T10S2.setForeground(new java.awt.Color(255, 255, 255));
+        T10S2.setForeground(new java.awt.Color(51, 51, 51));
         T10S2.setText("T10S2");
         T10S2.setBorder(null);
         T10S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1723,9 +1947,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T10S2);
         T10S2.setBounds(720, 280, 35, 35);
 
-        T11S7.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T11S7);
-        T11S7.setForeground(new java.awt.Color(255, 255, 255));
+        T11S7.setForeground(new java.awt.Color(51, 51, 51));
         T11S7.setText("T11S7");
         T11S7.setBorder(null);
         T11S7.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1733,12 +1956,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T11S7StateChanged(evt);
             }
         });
+        T11S7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T11S7ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T11S7);
         T11S7.setBounds(460, 390, 35, 35);
 
-        T11S6.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T11S6);
-        T11S6.setForeground(new java.awt.Color(255, 255, 255));
+        T11S6.setForeground(new java.awt.Color(51, 51, 51));
         T11S6.setText("T11S6");
         T11S6.setBorder(null);
         T11S6.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1746,12 +1973,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T11S6StateChanged(evt);
             }
         });
+        T11S6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T11S6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T11S6);
         T11S6.setBounds(400, 390, 35, 35);
 
-        T11S5.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T11S5);
-        T11S5.setForeground(new java.awt.Color(255, 255, 255));
+        T11S5.setForeground(new java.awt.Color(51, 51, 51));
         T11S5.setText("T11S5");
         T11S5.setBorder(null);
         T11S5.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1767,9 +1998,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T11S5);
         T11S5.setBounds(340, 390, 35, 35);
 
-        T11S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T11S4);
-        T11S4.setForeground(new java.awt.Color(255, 255, 255));
+        T11S4.setForeground(new java.awt.Color(51, 51, 51));
         T11S4.setText("T11S4");
         T11S4.setBorder(null);
         T11S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1777,12 +2007,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T11S4StateChanged(evt);
             }
         });
+        T11S4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T11S4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T11S4);
         T11S4.setBounds(280, 390, 35, 35);
 
-        T11S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T11S3);
-        T11S3.setForeground(new java.awt.Color(255, 255, 255));
+        T11S3.setForeground(new java.awt.Color(51, 51, 51));
         T11S3.setText("T11S3");
         T11S3.setBorder(null);
         T11S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1790,12 +2024,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T11S3StateChanged(evt);
             }
         });
+        T11S3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T11S3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T11S3);
         T11S3.setBounds(220, 390, 35, 35);
 
-        T11S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T11S2);
-        T11S2.setForeground(new java.awt.Color(255, 255, 255));
+        T11S2.setForeground(new java.awt.Color(51, 51, 51));
         T11S2.setText("T11S2");
         T11S2.setBorder(null);
         T11S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1811,9 +2049,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T11S2);
         T11S2.setBounds(160, 390, 35, 35);
 
-        T11S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T11S1);
-        T11S1.setForeground(new java.awt.Color(255, 255, 255));
+        T11S1.setForeground(new java.awt.Color(51, 51, 51));
         T11S1.setText("T11S1");
         T11S1.setBorder(null);
         T11S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1821,12 +2058,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T11S1StateChanged(evt);
             }
         });
+        T11S1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T11S1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T11S1);
         T11S1.setBounds(100, 390, 35, 35);
 
-        T11S8.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T11S8);
-        T11S8.setForeground(new java.awt.Color(255, 255, 255));
+        T11S8.setForeground(new java.awt.Color(51, 51, 51));
         T11S8.setText("T11S8");
         T11S8.setBorder(null);
         T11S8.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1834,12 +2075,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T11S8StateChanged(evt);
             }
         });
+        T11S8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T11S8ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T11S8);
         T11S8.setBounds(520, 390, 35, 35);
 
-        T11S9.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T11S9);
-        T11S9.setForeground(new java.awt.Color(255, 255, 255));
+        T11S9.setForeground(new java.awt.Color(51, 51, 51));
         T11S9.setText("T11S9");
         T11S9.setBorder(null);
         T11S9.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1847,12 +2092,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T11S9StateChanged(evt);
             }
         });
+        T11S9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T11S9ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T11S9);
         T11S9.setBounds(580, 390, 35, 35);
 
-        T0S5.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T0S5);
-        T0S5.setForeground(new java.awt.Color(255, 255, 255));
+        T0S5.setForeground(new java.awt.Color(51, 51, 51));
         T0S5.setText("T0S5");
         T0S5.setBorder(null);
         T0S5.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1868,9 +2117,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T0S5);
         T0S5.setBounds(1760, 410, 35, 35);
 
-        T0S1.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T0S1);
-        T0S1.setForeground(new java.awt.Color(255, 255, 255));
+        T0S1.setForeground(new java.awt.Color(51, 51, 51));
         T0S1.setText("T0S1");
         T0S1.setBorder(null);
         T0S1.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1886,9 +2134,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T0S1);
         T0S1.setBounds(1520, 410, 35, 35);
 
-        T0S2.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T0S2);
-        T0S2.setForeground(new java.awt.Color(255, 255, 255));
+        T0S2.setForeground(new java.awt.Color(51, 51, 51));
         T0S2.setText("T0S2");
         T0S2.setBorder(null);
         T0S2.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1904,9 +2151,8 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         jPanel1.add(T0S2);
         T0S2.setBounds(1580, 410, 35, 35);
 
-        T0S3.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T0S3);
-        T0S3.setForeground(new java.awt.Color(255, 255, 255));
+        T0S3.setForeground(new java.awt.Color(51, 51, 51));
         T0S3.setText("T0S3");
         T0S3.setBorder(null);
         T0S3.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1914,12 +2160,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T0S3StateChanged(evt);
             }
         });
+        T0S3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T0S3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T0S3);
         T0S3.setBounds(1640, 410, 35, 35);
 
-        T0S4.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T0S4);
-        T0S4.setForeground(new java.awt.Color(255, 255, 255));
+        T0S4.setForeground(new java.awt.Color(51, 51, 51));
         T0S4.setText("T0S4");
         T0S4.setBorder(null);
         T0S4.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1927,12 +2177,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T0S4StateChanged(evt);
             }
         });
+        T0S4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T0S4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T0S4);
         T0S4.setBounds(1700, 410, 35, 35);
 
-        T0S6.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T0S6);
-        T0S6.setForeground(new java.awt.Color(255, 255, 255));
+        T0S6.setForeground(new java.awt.Color(51, 51, 51));
         T0S6.setText("T0S6");
         T0S6.setBorder(null);
         T0S6.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1940,12 +2194,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T0S6StateChanged(evt);
             }
         });
+        T0S6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T0S6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T0S6);
         T0S6.setBounds(1810, 530, 35, 35);
 
-        T0S7.setBackground(new java.awt.Color(118, 79, 1));
         buttonGroup1.add(T0S7);
-        T0S7.setForeground(new java.awt.Color(255, 255, 255));
+        T0S7.setForeground(new java.awt.Color(51, 51, 51));
         T0S7.setText("T0S7");
         T0S7.setBorder(null);
         T0S7.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -1953,20 +2211,41 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
                 T0S7StateChanged(evt);
             }
         });
+        T0S7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T0S7ActionPerformed(evt);
+            }
+        });
         jPanel1.add(T0S7);
         T0S7.setBounds(1810, 470, 35, 35);
 
+        V.setBackground(new java.awt.Color(83, 82, 134));
+        buttonGroup1.add(V);
+        V.setForeground(new java.awt.Color(255, 255, 255));
+        V.setText("V");
+        V.setBorder(null);
+        V.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                VStateChanged(evt);
+            }
+        });
+        V.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VActionPerformed(evt);
+            }
+        });
+        jPanel1.add(V);
+        V.setBounds(630, 60, 90, 150);
+
         jLabel1.setBackground(new java.awt.Color(0, 125, 126));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/SeatingBackground.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Frame 1 (11).png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 1920, 1080);
 
-
         seatNumber.setText("jTextField1");
         jPanel1.add(seatNumber);
         seatNumber.setBounds(410, 760, 71, 22);
-
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1983,7 +2262,7 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void QStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_QStateChanged
-        // TODO add your handling code here:
+        // TODO add your handling code here:     
     }//GEN-LAST:event_QStateChanged
 
     private void UStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_UStateChanged
@@ -1992,6 +2271,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void UActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(U.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_UActionPerformed
 
     private void TStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TStateChanged
@@ -2032,6 +2314,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void LActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(L.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_LActionPerformed
 
     private void OStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_OStateChanged
@@ -2044,10 +2329,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void NActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(N.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_NActionPerformed
 
     private void OActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(Q.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_OActionPerformed
 
     private void DStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_DStateChanged
@@ -2064,6 +2355,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(B.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_BActionPerformed
 
     private void AStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_AStateChanged
@@ -2072,10 +2366,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AActionPerformed
         // TODO add your handling code here:
+        seatNumber.setText(A.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_AActionPerformed
 
     private void CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(C.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_CActionPerformed
 
     private void GStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_GStateChanged
@@ -2084,6 +2384,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void GActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(G.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_GActionPerformed
 
     private void FStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_FStateChanged
@@ -2092,6 +2395,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void FActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(F.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_FActionPerformed
 
     private void EStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_EStateChanged
@@ -2100,10 +2406,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(E.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_EActionPerformed
 
     private void QActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(Q.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_QActionPerformed
 
     private void H1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_H1StateChanged
@@ -2168,6 +2480,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T4S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T4S2ActionPerformed
         // TODO add your handling code here:
+        seatNumber.setText(T4S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T4S2ActionPerformed
 
     private void T4S4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T4S4StateChanged
@@ -2196,6 +2511,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T6S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T6S2ActionPerformed
         // TODO add your handling code here:
+        seatNumber.setText(T6S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T6S2ActionPerformed
 
     private void T6S3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T6S3StateChanged
@@ -2212,6 +2530,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T6S5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T6S5ActionPerformed
         // TODO add your handling code here:
+        seatNumber.setText(T6S5.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T6S5ActionPerformed
 
     private void T6S7StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T6S7StateChanged
@@ -2228,14 +2549,21 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T6S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T6S1ActionPerformed
         // TODO add your handling code here:
+        seatNumber.setText(T6S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T6S1ActionPerformed
 
     private void T5S2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T5S2StateChanged
         // TODO add your handling code here:
+        seatNumber.setText(T5S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T5S2StateChanged
 
     private void T5S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T5S2ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_T5S2ActionPerformed
 
     private void T3S2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T3S2StateChanged
@@ -2244,6 +2572,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T3S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T3S2ActionPerformed
         // TODO add your handling code here:
+        seatNumber.setText(T3S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T3S2ActionPerformed
 
     private void T3S1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T3S1StateChanged
@@ -2252,6 +2583,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T3S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T3S1ActionPerformed
         // TODO add your handling code here:
+        seatNumber.setText(T3S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T3S1ActionPerformed
 
     private void T7S1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T7S1StateChanged
@@ -2260,6 +2594,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T7S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T7S1ActionPerformed
         // TODO add your handling code here:
+        seatNumber.setText(T7S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T7S1ActionPerformed
 
     private void T7S2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T7S2StateChanged
@@ -2268,6 +2605,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T7S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T7S2ActionPerformed
         // TODO add your handling code here:
+        seatNumber.setText(T7S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T7S2ActionPerformed
 
     private void T8S1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T8S1StateChanged
@@ -2276,14 +2616,23 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T8S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T8S1ActionPerformed
         // TODO add your handling code here:
+        seatNumber.setText(T8S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T8S1ActionPerformed
 
     private void T8S2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T8S2StateChanged
         // TODO add your handling code here:
+        seatNumber.setText(T8S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T8S2StateChanged
 
     private void T8S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T8S2ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T8S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T8S2ActionPerformed
 
     private void T9S1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T9S1StateChanged
@@ -2292,6 +2641,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T9S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T9S1ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T9S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T9S1ActionPerformed
 
     private void T9S2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T9S2StateChanged
@@ -2300,6 +2652,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T9S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T9S2ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T9S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T9S2ActionPerformed
 
     private void T13S4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T13S4StateChanged
@@ -2392,10 +2747,16 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T15S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T15S4ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T15S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T15S4ActionPerformed
 
     private void T18S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T18S3ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T18S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T18S3ActionPerformed
 
     private void T19S4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T19S4StateChanged
@@ -2408,6 +2769,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T19S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T19S3ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T19S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T19S3ActionPerformed
 
     private void T19S2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T19S2StateChanged
@@ -2444,6 +2808,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T17S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T17S3ActionPerformed
         // TODO add your handling code here:
+         seatNumber.setText(T17S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T17S3ActionPerformed
 
     private void T17S2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T17S2StateChanged
@@ -2464,6 +2831,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T16S3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T16S3StateChanged
         // TODO add your handling code here:
+         seatNumber.setText(T16S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T16S3StateChanged
 
     private void T16S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T16S3ActionPerformed
@@ -2488,6 +2858,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T10S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T10S1ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T10S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T10S1ActionPerformed
 
     private void T10S2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T10S2StateChanged
@@ -2496,6 +2869,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T10S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T10S2ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T10S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T10S2ActionPerformed
 
     private void T11S7StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T11S7StateChanged
@@ -2512,6 +2888,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T11S5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T11S5ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T11S5.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T11S5ActionPerformed
 
     private void T11S4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T11S4StateChanged
@@ -2528,6 +2907,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T11S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T11S2ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T11S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T11S2ActionPerformed
 
     private void T11S1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T11S1StateChanged
@@ -2548,6 +2930,10 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T0S5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T0S5ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T0S5.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+        
     }//GEN-LAST:event_T0S5ActionPerformed
 
     private void T0S1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T0S1StateChanged
@@ -2556,6 +2942,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T0S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T0S1ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T0S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T0S1ActionPerformed
 
     private void T0S2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T0S2StateChanged
@@ -2564,6 +2953,9 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
 
     private void T0S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T0S2ActionPerformed
         // TODO add your handling code here:
+          seatNumber.setText(T0S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
     }//GEN-LAST:event_T0S2ActionPerformed
 
     private void T0S3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_T0S3StateChanged
@@ -2597,6 +2989,536 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
         new SnellLibrarySlotBooking().setVisible(true);
                 dispose();
     }//GEN-LAST:event_T2S1ActionPerformed
+
+    private void T0S6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T0S6ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T0S6.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T0S6ActionPerformed
+
+    private void T0S7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T0S7ActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(T0S7.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T0S7ActionPerformed
+
+    private void T0S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T0S4ActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(T0S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T0S4ActionPerformed
+
+    private void T0S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T0S3ActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(T0S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T0S3ActionPerformed
+
+    private void T2S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T2S2ActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(T2S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T2S2ActionPerformed
+
+    private void T2S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T2S3ActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(T2S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T2S3ActionPerformed
+
+    private void T2S6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T2S6ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T2S6.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T2S6ActionPerformed
+
+    private void T2S5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T2S5ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T2S5.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T2S5ActionPerformed
+
+    private void T2S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T2S4ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T2S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T2S4ActionPerformed
+
+    private void T1S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T1S1ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T1S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T1S1ActionPerformed
+
+    private void T1S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T1S2ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T1S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T1S2ActionPerformed
+
+    private void T1S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T1S3ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T1S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T1S3ActionPerformed
+
+    private void T1S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T1S4ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T1S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T1S4ActionPerformed
+
+    private void T1S5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T1S5ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T1S5.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T1S5ActionPerformed
+
+    private void T1S6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T1S6ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T1S6.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T1S6ActionPerformed
+
+    private void T4S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T4S1ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T4S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T4S1ActionPerformed
+
+    private void T4S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T4S3ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T4S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T4S3ActionPerformed
+
+    private void T4S6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T4S6ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T4S6.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T4S6ActionPerformed
+
+    private void T4S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T4S4ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T4S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T4S4ActionPerformed
+
+    private void T5S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T5S1ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T5S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T5S1ActionPerformed
+
+    private void T6S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T6S3ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T6S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T6S3ActionPerformed
+
+    private void T6S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T6S4ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T6S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T6S4ActionPerformed
+
+    private void T6S6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T6S6ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T6S6.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T6S6ActionPerformed
+
+    private void T6S7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T6S7ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T6S7.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T6S7ActionPerformed
+
+    private void T12S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T12S2ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T12S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T12S2ActionPerformed
+
+    private void T12S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T12S1ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T12S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+        
+    }//GEN-LAST:event_T12S1ActionPerformed
+
+    private void T12S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T12S3ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T12S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T12S3ActionPerformed
+
+    private void T12S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T12S4ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T12S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T12S4ActionPerformed
+
+    private void T13S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T13S1ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T13S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T13S1ActionPerformed
+
+    private void T13S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T13S2ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T13S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T13S2ActionPerformed
+
+    private void T13S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T13S3ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T13S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T13S3ActionPerformed
+
+    private void T13S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T13S4ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T13S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T13S4ActionPerformed
+
+    private void T14S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T14S1ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T14S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T14S1ActionPerformed
+
+    private void T14S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T14S2ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T14S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T14S2ActionPerformed
+
+    private void T14S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T14S3ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T14S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T14S3ActionPerformed
+
+    private void T14S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T14S4ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T14S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T14S4ActionPerformed
+
+    private void T15S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T15S1ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T15S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T15S1ActionPerformed
+
+    private void T15S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T15S2ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T15S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T15S2ActionPerformed
+
+    private void T15S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T15S3ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T15S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T15S3ActionPerformed
+
+    private void T11S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T11S1ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T11S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T11S1ActionPerformed
+
+    private void T11S3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T11S3ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T11S3.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T11S3ActionPerformed
+
+    private void T11S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T11S4ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T11S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T11S4ActionPerformed
+
+    private void T11S6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T11S6ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T11S6.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T11S6ActionPerformed
+
+    private void T11S7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T11S7ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T11S7.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T11S7ActionPerformed
+
+    private void T11S8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T11S8ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T11S8.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T11S8ActionPerformed
+
+    private void T11S9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T11S9ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T11S9.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T11S9ActionPerformed
+
+    private void T19S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T19S1ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T19S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T19S1ActionPerformed
+
+    private void T19S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T19S2ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T19S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T19S2ActionPerformed
+
+    private void T19S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T19S4ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T19S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T19S4ActionPerformed
+
+    private void T19S5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T19S5ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T19S5.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T19S5ActionPerformed
+
+    private void T19S6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T19S6ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T19S6.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T19S6ActionPerformed
+
+    private void T18S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T18S1ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T18S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T18S1ActionPerformed
+
+    private void T18S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T18S2ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T18S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T18S2ActionPerformed
+
+    private void T18S6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T18S6ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T18S6.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T18S6ActionPerformed
+
+    private void T18S5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T18S5ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T18S5.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T18S5ActionPerformed
+
+    private void T17S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T17S1ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T17S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T17S1ActionPerformed
+
+    private void T17S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T17S2ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T17S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T17S2ActionPerformed
+
+    private void T17S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T17S4ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T17S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T17S4ActionPerformed
+
+    private void T17S5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T17S5ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T17S5.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T17S5ActionPerformed
+
+    private void T17S6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T17S6ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T17S6.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T17S6ActionPerformed
+
+    private void T16S1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T16S1ActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(T16S1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T16S1ActionPerformed
+
+    private void T16S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T16S2ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T16S2.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T16S2ActionPerformed
+
+    private void T16S4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T16S4ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T16S4.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T16S4ActionPerformed
+
+    private void T16S5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T16S5ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T16S5.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T16S5ActionPerformed
+
+    private void T16S6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T16S6ActionPerformed
+        // TODO add your handling code here:
+        seatNumber.setText(T16S6.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_T16S6ActionPerformed
+
+    private void DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(D.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_DActionPerformed
+
+    private void H1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_H1ActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(H1.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_H1ActionPerformed
+
+    private void JActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(J.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_JActionPerformed
+
+    private void KActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(K.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_KActionPerformed
+
+    private void MActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(M.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_MActionPerformed
+
+    private void PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(P.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_PActionPerformed
+
+    private void RActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(R.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_RActionPerformed
+
+    private void SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(S.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_SActionPerformed
+
+    private void TActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TActionPerformed
+        // TODO add your handling code here:
+          seatNumber.setText(T.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_TActionPerformed
+
+    private void VStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_VStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VStateChanged
+
+    private void VActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VActionPerformed
+        // TODO add your handling code here:
+         seatNumber.setText(V.getText());
+        new SnellLibrarySlotBooking().setVisible(true);
+                dispose();
+    }//GEN-LAST:event_VActionPerformed
 
 
     /**
@@ -2770,14 +3692,10 @@ public class SnellLibraryBookingPage extends javax.swing.JFrame {
     private javax.swing.JToggleButton T9S1;
     private javax.swing.JToggleButton T9S2;
     private javax.swing.JToggleButton U;
+    private javax.swing.JToggleButton V;
     private javax.swing.ButtonGroup buttonGroup1;
-
     private static final javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JTextField seatNumber;
-
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-
     // End of variables declaration//GEN-END:variables
 }

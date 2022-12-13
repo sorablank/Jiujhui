@@ -4,6 +4,15 @@
  */
 package FinalProject;
 
+import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import java.sql.*;
+
+
 /**
  *
  * @author maher
@@ -13,6 +22,7 @@ public class StudentHomePage extends javax.swing.JFrame {
     /**
      * Creates new form StudentHomePage
      */
+    Connection con;
     public StudentHomePage() {
         initComponents();
     }
@@ -30,6 +40,7 @@ public class StudentHomePage extends javax.swing.JFrame {
         curryFoodOrder = new javax.swing.JButton();
         myProfile = new javax.swing.JButton();
         snellLibraryBooking = new javax.swing.JButton();
+        navigate = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,6 +85,21 @@ public class StudentHomePage extends javax.swing.JFrame {
         jPanel1.add(snellLibraryBooking);
         snellLibraryBooking.setBounds(790, 500, 360, 90);
 
+        navigate.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        navigate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account", "Back To Home Page", "My Profile", "Order Page", "Logout" }));
+        navigate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                navigateMouseClicked(evt);
+            }
+        });
+        navigate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                navigateActionPerformed(evt);
+            }
+        });
+        jPanel1.add(navigate);
+        navigate.setBounds(1730, 90, 160, 40);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Frame 2 (2).png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
@@ -99,20 +125,81 @@ public class StudentHomePage extends javax.swing.JFrame {
 
     private void curryFoodOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_curryFoodOrderActionPerformed
         // TODO add your handling code here:
+        new StudentOrdersPage().setVisible(true);
+        dispose();
        
 
     }//GEN-LAST:event_curryFoodOrderActionPerformed
 
     private void myProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myProfileActionPerformed
         // TODO add your handling code here:
+        new StudentProfilePage().setVisible(true);
+        dispose();
+        
     }//GEN-LAST:event_myProfileActionPerformed
 
     private void snellLibraryBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_snellLibraryBookingActionPerformed
         // TODO add your handling code here:
+      
+        String username = StudentLoginPage.usernameField.getText();
+        String status = "suspended";
+        String state = "";
+         try {
+        
+             con = (Connection) ConnectionClass.getConnection();
+            Statement StudentsStatement = (Statement) con.createStatement();
+            String slotSql = ("Select status from student_info where username = '"+username+"'" );
+            PreparedStatement slotsPreparedStatement = con.prepareStatement(slotSql);
+            ResultSet resultSet = slotsPreparedStatement.executeQuery();
+           while (resultSet.next()) { 
+           state = resultSet.getString("status");
+           }
+          
+           
+          
+           
+          
+            
+            
+    
+    } 
+           
+               catch(Exception e){
+        JOptionPane.showMessageDialog(null, e);
+           }
+         if (status.equals(state)) {
+           JOptionPane.showMessageDialog(null, "Your account is forbidden from making any bookings, contact Library Admin for further information: snellstaff@gmail.com");
+           }
+         else {
         new SnellLibraryDatePicker().setVisible(true);
                 dispose();
+         }
             
     }//GEN-LAST:event_snellLibraryBookingActionPerformed
+
+    private void navigateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navigateMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_navigateMouseClicked
+
+    private void navigateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_navigateActionPerformed
+        // TODO add your handling code here:
+        if(navigate.getSelectedItem().toString().equals("Back To Home Page")){
+            new StudentHomePage().setVisible(true);
+            dispose();
+        }
+        if(navigate.getSelectedItem().toString().equals("My Profile")){
+            new StudentProfilePage().setVisible(true);
+            dispose();
+        }
+        if(navigate.getSelectedItem().toString().equals("Order Page")){
+            new StudentOrdersPage().setVisible(true);
+            dispose();
+        }
+        if(navigate.getSelectedItem().toString().equals("Logout")){
+            new NEUHomePage().setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_navigateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,6 +241,7 @@ public class StudentHomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton myProfile;
+    private javax.swing.JComboBox<String> navigate;
     private javax.swing.JButton snellLibraryBooking;
     // End of variables declaration//GEN-END:variables
 }
